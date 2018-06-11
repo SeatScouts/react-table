@@ -46,10 +46,6 @@ export default (function (Component) {
             treeTableIndent = _props.treeTableIndent,
             rest = _objectWithoutProperties(_props, ['columns', 'treeTableIndent']);
 
-        console.log("Columns");
-        console.log(columns);
-        console.log("rest");
-        console.log(rest);
         var TrComponent = this.TrComponent,
             getTrProps = this.getTrProps;
 
@@ -92,22 +88,12 @@ export default (function (Component) {
 
       if (ri && ri.groupedByPivot) {
         var cell = _extends({}, props.children[ri.level]);
-        console.log("ri");
-        console.log(ri);
-        console.log("The TR COMPONENT!");
-        console.log(props);
-        console.log("rest");
-        console.log(rest);
-
-        console.log("The cell to render");
-        console.log(cell);
         cell.props.style.flex = 'unset';
         cell.props.style.width = '100%';
         cell.props.style.maxWidth = 'unset';
         cell.props.style.paddingLeft = _this3.props.treeTableIndent * ri.level + 'px';
         // cell.props.style.backgroundColor = '#DDD';
         cell.props.style.borderBottom = '1px solid rgba(128,128,128,0.2)';
-        //cell.props.className = cell.props.className.replace('hidden', '');
 
         return React.createElement(
           'div',
